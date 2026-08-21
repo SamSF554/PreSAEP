@@ -10,3 +10,4 @@ sequelize.authenticate()
     .catch(err => console.error('Erro ao conectar:', err))
 
 app.listen(3000, () => console.log('Serviço rodando na porta 3000'))
+
