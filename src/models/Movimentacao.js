@@ -12,11 +12,12 @@ const Movimentacao = sequelize.define('Movimentacao', {
         allowNull:false,
     },
     data: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
     },
 })
 
 Livro.hasMany(Movimentacao, {foreignKey: 'livro_id'})
+Movimentacao.belongsTo(Livro, {foreignKey: 'livro_id'})
 
 module.exports = Movimentacao

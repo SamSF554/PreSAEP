@@ -16,7 +16,6 @@
     "mysql2": "^3.24.2",
     "sequelize": "^6.37.8"
   },
-  "description": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SamSF554/PreSAEP.git"
@@ -24,5 +23,7 @@
   "bugs": {
     "url": "https://github.com/SamSF554/PreSAEP/issues"
   },
-  "homepage": "https://github.com/SamSF554/PreSAEP#readme"
+  "homepage": "https://github.com/SamSF554/PreSAEP#readme",
+  "devDependencies": {},
+  "description": ""
 }
