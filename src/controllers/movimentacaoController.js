@@ -28,6 +28,7 @@ async function cadastrar(req, res) {
             livro_id,
             tipo,
             quantidade,
+            usuario_id: req.usuario_id,
         })
 
         res.status(201).json(movimentacao)
