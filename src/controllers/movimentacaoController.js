@@ -5,7 +5,7 @@ async function cadastrar(req, res) {
     try {
         const { livro_id, tipo, quantidade } = req.body
 
-        const livro = await Livro.findByPk(livro_id)
+        const livro = await Livros.findByPk(livro_id)
         if (!livro) {
             return res.status(404).json({
                 mensagem: 'Livro não encontrado',

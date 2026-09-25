@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const movimentacaoController = require('../controllers/movimentacaoController')
+const movimentacao = require('../controllers/movimentacaoController')
 const auth = require('../middlewares/auth')
 
-router.post('movimentacoes', auth, movimentacaoController.cadastrar)
+router.post('/movimentacoes', auth, movimentacao.cadastrar)
 
-module.exports = router
+module.exports = router 
