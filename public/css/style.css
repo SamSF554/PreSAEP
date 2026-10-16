@@ -1,0 +1,304 @@
+@import url('https:/*fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+
+:root {
+    --cor-principal: #334155;
+    --cor-principal-escura: #1e293b;
+    --cor-destaque: #38bdf8;
+    --cor-fundo: #f1f5f9;
+    --cor-cartao: #ffffff;
+    --cor-texto: #1e293b;
+    --fonte: 'Poppins', Arial, sans-serif;
+    --raio: 10px;
+}
+
+/* ========== 2. BASE ========== */
+* {
+    box-sizing: border-box;
+    /* O tamanho definido já inclui padding e borda.*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    /*100% da altura da tela visível do navegador.*/
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* sem margem em cima e baixo, espaço igual entre esquerda e direita, logo centraliza horizontalmente*/
+    padding: 24px 16px;
+    /*(cima e direita)*/
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+/* ========== 3. CABEÇALHO E MENU ========== */
+.cabecalho {
+    background: var(--cor-principal);
+    color: white;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    /*espessura da letra*/
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: var(--raio);
+}
+
+.menu a:hover {
+    background: var(--cor-principal-escura);
+}
+
+/* ========== 4. CARTÃO ========== */
+.cartao {
+    background: var(--cor-cartao);
+    border-radius: var(--raio);
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+/* ========== 5. FORMULÁRIOS ========== */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--raio);
+    background: white;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--cor-principal);
+    border-color: transparent;
+}
+
+/* ========== 6. BOTÕES ========== */
+.botao {
+    display: inline-block;
+    background: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--raio);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    /* faz o mouse virar a mãozinha*/
+}
+
+.botao:hover {
+    background: var(--cor-principal-escura);
+}
+
+.botao-perigo {
+    background: #dc2626;
+}
+
+.botao-perigo:hover {
+    background: #991b1b;
+}
+
+.botao-pequeno {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.mensagem {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+/* ========== 7. RODAPÉ ========== */
+.rodape {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* ========== 8. TELA DE LOGIN ========== */
+.pagina-login {
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.caixa-login {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.caixa-login form {
+    text-align: left;
+}
+
+.caixa-login .botao {
+    width: 100%;
+}
+
+.subtitulo {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* ========== 9. PAINEL (CARDS EM GRADE) ========== */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /*repete coluna de mínimo 220px e 1fr(1 fração do espaço que sobra) logo as colunas se
+    ajustam sozinhas ao tamanho da tela.*/
+    gap: 16px;
+}
+
+.card-atalho {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+    border-top: 5px solid var(--cor-destaque);
+    margin-bottom: 0;
+    transition: transform 0.2s;
+}
+
+.card-atalho:hover {
+    transform: translateY(-4px);
+}
+
+.icone {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+/* ========== 10. BUSCA, TABELA E PAGINAÇÃO ========== */
+.linha-busca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.linha-busca input {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 0;
+}
+
+
+.tabela-rolagem {
+    overflow-x: auto;
+    /* cria uma barra de rolagem horizontal só quando o conteúdo não cabe na largura do elemento.*/
+}
+
+table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: var(--cor-principal);
+    color: white;
+}
+
+tr:hover td {
+    background: #f8fafc;
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* ========== 11. ETIQUETAS DE ENTRADA E SAÍDA ========== */
+.etiqueta {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.entrada {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.saida {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .cartao {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* deixa o texto com 1,5 vez o tamanho da fonte base da página. 1rem equivale 16px*/
+    }
+}

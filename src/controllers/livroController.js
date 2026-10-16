@@ -15,7 +15,7 @@ async function cadastrar(req,res){
     }catch (erro){
         res.status(400).json({
             mensagem: 'Erro ao cadastrar livro',
-            erro: erro.mensage,
+            erro: erro.message,
         })
     }
 }
@@ -42,10 +42,10 @@ async function listar(req,res){
 
 
         res.json(livros)
-    }catch{erro}{
+    }catch (erro){
         res.status(400).json({
             mensagem: 'Erro ao listar livros',
-            erro: erro.mensage,
+            erro: erro.message,
         })
     }
 }
@@ -68,7 +68,7 @@ async function deletar(req,res){
     } catch (erro){
         res.status(400).json({
             mensagem: 'Erro ao remover livro',
-            erro: erro.mensage,
+            erro: erro.message,
         })
     }
 }

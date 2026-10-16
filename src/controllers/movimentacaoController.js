@@ -28,14 +28,14 @@ async function cadastrar(req, res) {
             livro_id,
             tipo,
             quantidade,
-            usuario_id: req.usuario_id,
+            usuario_id: req.usuario.id,
         })
 
         res.status(201).json(movimentacao)
     } catch (erro){
         res.status(400).json({
             mensagem: 'Erro ao cadastrar movimentação',
-            erro: erro.mensage,
+            erro: erro.message,
         })
     }
 }
